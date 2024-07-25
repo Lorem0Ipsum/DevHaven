@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevHaven - Developer Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid #357ab8;
+        }
+        header img {
+            width: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        header h1 {
+            display: inline;
+            font-size: 1.5rem;
+        }
+        .theme-switcher {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        section {
+            width: 80%;
+            margin: 1rem 0;
+        }
+        h2 {
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: #4a90e2;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #4a90e2;
+            color: white;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        .console {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+            width: 100%;
+            min-height: 150px;
+            font-family: monospace;
+            overflow-y: auto;
+            white-space: pre;
+            max-height: 200px;
+        }
+        .console input {
+            width: calc(100% - 20px);
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+        }
+        .console button {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: none;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .console button:hover {
+            background-color: #357ab8;
+        }
+        .featured-articles {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+            width: 80%;
+        }
+        .search-container {
+            margin: 1rem 0;
+            width: 80%;
+        }
+        .search-container input[type="text"] {
+            width: calc(100% - 100px);
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-container input[type="submit"] {
+            padding: 0.5rem;
+            border: none;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-container input[type="submit"]:hover {
+            background-color: #357ab8;
+        }
+        .code-editor {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: monospace;
+            min-height: 100px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://ibb.co/ByHqDnw">
+            <img src="https://i.ibb.co/fkV4RDQ/Screenshot-from-2024-07-25-23-31-25.png" alt="DevHaven Logo">
+        </a>
+        <h1>Welcome to DevHaven</h1>
+        <div class="theme-switcher">
+            <label>
+                <input type="checkbox" id="themeToggle" onclick="toggleTheme()">
+                Dark Mode
+            </label>
+        </div>
+    </header>
+    <main>
+        <div class="search-container">
+            <form action="https://www.google.com/search" method="get">
+                <input type="text" name="q" placeholder="Search Google..." required>
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        <section>
+            <h2>Resources</h2>
+            <ul id="resourceList">
+                <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+                <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+                <li><a href="https://www.geeksforgeeks.org" target="_blank">GeeksforGeeks</a></li>
+                <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks</a></li>
+                <li><a href="https://tutorialspoint.com" target="_blank">TutorialsPoint</a></li>
+                <li><a href="https://www.freecodecamp.org/news/" target="_blank">FreeCodeCamp News</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Development Tools</h2>
+            <ul>
+                <li><a href="https://codepen.io" target="_blank">CodePen</a></li>
+                <li><a href="https://jsfiddle.net" target="_blank">JSFiddle</a></li>
+                <li><a href="https://codesandbox.io" target="_blank">CodeSandbox</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://gitlab.com" target="_blank">GitLab</a></li>
+                <li><a href="https://bitbucket.org" target="_blank">Bitbucket</a></li>
+                <li><a href="https://replit.com" target="_blank">Replit</a></li>
+                <li><a href="https://glitch.com" target="_blank">Glitch</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Learning Platforms</h2>
+            <ul>
+                <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
+                <li><a href="https://www.pluralsight.com" target="_blank">Pluralsight</a></li>
+                <li><a href="https://www.codecademy.com" target="_blank">Codecademy</a></li>
+                <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>APIs</h2>
+            <ul>
+                <li><a href="https://api.openweathermap.org" target="_blank">OpenWeatherMap API</a></li>
+                <li><a href="https://newsapi.org" target="_blank">News API</a></li>
+                <li><a href="https://twilio.com" target="_blank">Twilio</a></li>
+                <li><a href="https://stripe.com/docs/api" target="_blank">Stripe API</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Documentation</h2>
+            <ul>
+                <li><a href="https://www.php.net/docs.php" target="_blank">PHP Documentation</a></li>
+                <li><a href="https://docs.python.org/3/" target="_blank">Python Documentation</a></li>
+                <li><a href="https://docs.microsoft.com/en-us/dotnet/" target="_blank">Microsoft .NET Documentation</a></li>
+                <li><a href="https://developer.android.com/docs" target="_blank">Android Documentation</a></li>
+                <li><a href="https://www.ruby-lang.org/en/documentation/" target="_blank">Ruby Documentation</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Frameworks & Libraries</h2>
+            <ul>
+                <li><a href="https://reactjs.org" target="_blank">React</a></li>
+                <li><a href="https://angular.io" target="_blank">Angular</a></li>
+                <li><a href="https://vuejs.org" target="_blank">Vue.js</a></li>
+                <li><a href="https://www.djangoproject.com" target="_blank">Django</a></li>
+                <li><a href="https://flask.palletsprojects.com/" target="_blank">Flask</a></li>
+                <li><a href="https://www.spring.io" target="_blank">Spring Framework</a></li>
+                <li><a href="https://www.laravel.com" target="_blank">Laravel</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Interactive Console</h2>
+            <label for="languageSelect">Select Language:</label>
+            <select id="languageSelect" onchange="updateConsolePlaceholder()">
+                <option value="js">JavaScript</option>
+                <option value="html">HTML</option>
+            </select>
+            <textarea id="consoleInput" class="code-editor" placeholder="Enter code here" onkeypress="if(event.key === 'Enter'){ runCode(); }"></textarea>
+            <button onclick="runCode()">Run Code</button>
+            <button onclick="clearConsole()">Clear</button>
+            <button onclick="downloadFile()">Download Code</button>
+        </section>
+        <section class="featured-articles">
+            <h2>Featured Articles</h2>
+            <ul>
+                <li><a href="https://blog.devgenius.io/getting-started-with-javascript-a-beginners-guide-9eb5bb3d68d3" target="_blank">
+                    <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*m8vnGBYhU-7NTh5W3K83Jw.png" alt="Getting Started with JavaScript" width="50" height="50">
+                    Getting Started with JavaScript: A Beginner's Guide
+                </a></li>
+                <li><a href="https://css-tricks.com/modern-css-reset/" target="_blank">
+                    <img src="https://css-tricks.com/wp-content/uploads/2021/01/css-reset.png" alt="Modern CSS Reset" width="50" height="50">
+                    A Modern CSS Reset
+                </a></li>
+                <li><a href="https://medium.com/swlh/the-complete-guide-to-css-grid-2a74036c34f7" target="_blank">
+                    <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*2vzy2yFUSrM0oKx-ZYIgPQ.png" alt="Complete Guide to CSS Grid" width="50" height="50">
+                    The Complete Guide to CSS Grid
+                </a></li>
+                <li><a href="https://www.freecodecamp.org/news/the-complete-guide-to-javascript-promises-51e8f93d9f2b/" target="_blank">
+                    <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*U1r3W90ZdfGm8lKY1C2-9A.png" alt="Complete Guide to JavaScript Promises" width="50" height="50">
+                    The Complete Guide to JavaScript Promises
+                </a></li>
+                <li><a href="https://www.smashingmagazine.com/2021/03/getting-started-with-react-hooks/" target="_blank">
+                    <img src="https://miro.medium.com/v2/resize:fit:1200/format:webp/1*0u9mp8sTTVN5bsJf1Mu4FA.png" alt="Getting Started with React Hooks" width="50" height="50">
+                    Getting Started with React Hooks
+                </a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you have suggestions or need assistance, please contact us at <a href="mailto:y-disposable@proton.me">@devhaven</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 DevHaven. Not a single right reserved.</p>
+    </footer>
+
+    <script>
+        //Theme
+        function toggleTheme() {
+            const isChecked = document.getElementById('themeToggle').checked;
+            if (isChecked) {
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = '#f4f4f9';
+                document.querySelectorAll('header, footer').forEach(elem => {
+                    elem.style.backgroundColor = '#555';
+                });
+                document.querySelectorAll('input, textarea, button').forEach(elem => {
+                    elem.style.backgroundColor = '#555';
+                    elem.style.color = '#f4f4f9';
+                    elem.style.borderColor = '#777';
+                });
+                document.querySelector('.featured-articles').style.backgroundColor = '#444';
+                document.querySelector('.featured-articles').style.borderColor = '#666';
+                document.querySelector('.featured-articles').style.color = '#f4f4f9';
+            } else {
+                document.body.style.backgroundColor = '#f4f4f9';
+                document.body.style.color = '#333';
+                document.querySelectorAll('header, footer').forEach(elem => {
+                    elem.style.backgroundColor = '#4a90e2';
+                });
+                document.querySelectorAll('input, textarea, button').forEach(elem => {
+                    elem.style.backgroundColor = '#fff';
+                    elem.style.color = '#333';
+                    elem.style.borderColor = '#ccc';
+                });
+                document.querySelector('.featured-articles').style.backgroundColor = '#fff';
+                document.querySelector('.featured-articles').style.borderColor = '#ccc';
+                document.querySelector('.featured-articles').style.color = '#333';
+            }
+        }
+
+        //Console
+        function runCode() {
+            const input = document.getElementById('consoleInput').value;
+            const selectedLanguage = document.getElementById('languageSelect').value;
+
+            let newWindow = window.open('', 'Result', 'width=' + (window.innerWidth / 2) + ', height=' + (window.innerHeight / 2) + ', top=' + (window.innerHeight / 4) + ', left=' + (window.innerWidth / 4));
+
+            if (selectedLanguage === 'js') {
+                newWindow.document.write('<html><head><title>JavaScript Result</title></head><body>');
+                newWindow.document.write('<script>' + input + '<\/script>');
+                newWindow.document.write('</body></html>');
+            } else if (selectedLanguage === 'html') {
+                newWindow.document.write('<html><head><title>HTML Result</title></head><body>');
+                newWindow.document.write(input);
+                newWindow.document.write('</body></html>');
+            }
+
+            newWindow.document.close();
+            
+            setTimeout(() => {
+                newWindow.location.reload();
+            }, 100);
+        }
+
+        function clearConsole() {
+            document.getElementById('consoleInput').value = '';
+        }
+
+        function downloadFile() {
+            const input = document.getElementById('consoleInput').value;
+            const selectedLanguage = document.getElementById('languageSelect').value;
+            const blob = new Blob([input], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `code.${selectedLanguage === 'js' ? 'js' : 'html'}`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function updateConsolePlaceholder() {
+            const selectedLanguage = document.getElementById('languageSelect').value;
+            const consoleInput = document.getElementById('consoleInput');
+            consoleInput.placeholder = selectedLanguage === 'js' ? 'Enter JavaScript code here...' : 'Enter HTML code here...';
+        }
+    </script>
+</body>
+</html>
